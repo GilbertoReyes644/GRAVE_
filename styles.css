@@ -1,0 +1,375 @@
+/* =========================================
+   DESIGN TOKENS & SYSTEM
+========================================= */
+:root {
+    --bg-black: #000000;
+    --bg-dark: #0a0a0a;
+    --bg-card: #121212;
+    --border-gray: #1f1f1f;
+    --text-white: #ffffff;
+    --text-gray: #888888;
+    --accent-red: #D32F2F;
+    --font-heading: 'Anton', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Background Glow */
+.glow-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center, rgba(211, 47, 47, 0.15) 0%, rgba(0, 0, 0, 0.98) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand-logo-small {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    letter-spacing: 1px;
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+.star-icon-sm {
+    width: 14px;
+    height: 14px;
+}
+
+.btn-nav {
+    background: var(--accent-red);
+    color: var(--text-white);
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-nav:hover {
+    background: #b71c1c;
+    transform: scale(1.03);
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero-section {
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 3rem;
+}
+
+.hero-center-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grave-title {
+    font-family: var(--font-heading);
+    font-size: clamp(5rem, 18vw, 15rem);
+    line-height: 0.85;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: var(--text-white);
+    position: relative;
+    user-select: none;
+}
+
+.star-container {
+    position: relative;
+    display: inline-block;
+}
+
+.star-svg {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 0.35em;
+    height: 0.35em;
+    fill: var(--accent-red);
+    filter: drop-shadow(0 0 15px rgba(211, 47, 47, 0.9));
+}
+
+.tagline-box {
+    margin-top: 1.5rem;
+}
+
+.tagline-text {
+    font-size: clamp(0.85rem, 1.8vw, 1.3rem);
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: var(--text-gray);
+    text-transform: uppercase;
+}
+
+/* =========================================
+   SHIELD SECTION
+========================================= */
+.shield-section {
+    padding: 4rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shield-container {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-gray);
+    padding: 3.5rem 2rem;
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
+}
+
+.shield-badge {
+    color: var(--accent-red);
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+}
+
+.shield-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    margin: 0.8rem 0;
+}
+
+.shield-sub {
+    color: var(--text-gray);
+    max-width: 440px;
+    margin: 0 auto 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.star-shield-svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* =========================================
+   PILARES
+========================================= */
+.pilars-section {
+    padding: 5rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-header-center {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-badge {
+    color: var(--accent-red);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.pilars-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    letter-spacing: 1px;
+}
+
+.pilars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.pilar-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gray);
+    padding: 2.2rem 1.8rem;
+    transition: border-color 0.2s ease;
+}
+
+.pilar-card:hover {
+    border-color: var(--accent-red);
+}
+
+.pilar-num {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--accent-red);
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.pilar-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.pilar-desc {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* =========================================
+   BUY SECTION (CTA Directo)
+========================================= */
+.buy-section {
+    padding: 4rem 1.5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.buy-card {
+    background: linear-gradient(135deg, #121212 0%, #080808 100%);
+    border: 1px solid var(--border-gray);
+    padding: 3.5rem 2rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.buy-badge {
+    color: var(--accent-red);
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.buy-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    margin: 0.5rem 0 1rem;
+}
+
+.buy-desc {
+    color: var(--text-gray);
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.btn-buy-now {
+    display: inline-block;
+    background: var(--accent-red);
+    color: var(--text-white);
+    text-decoration: none;
+    padding: 1.2rem 2.5rem;
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(211, 47, 47, 0.4);
+    transition: all 0.2s ease;
+}
+
+.btn-buy-now:hover {
+    background: #b71c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(211, 47, 47, 0.6);
+}
+
+/* WHOLESALE SUBTLE */
+.wholesale-subtle {
+    text-align: center;
+    padding: 3rem 1.5rem 1rem;
+    color: var(--text-gray);
+    font-size: 0.85rem;
+}
+
+.link-wholesale {
+    color: var(--text-white);
+    text-decoration: underline;
+    font-weight: 600;
+    margin-top: 0.3rem;
+    display: inline-block;
+}
+
+/* FOOTER */
+.footer {
+    border-top: 1px solid var(--border-gray);
+    padding: 3rem 1.5rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-brand {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+.footer-sub {
+    color: var(--text-gray);
+    font-size: 0.8rem;
+}
+
+.footer-meta {
+    color: var(--text-gray);
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.made-mx {
+    margin-top: 0.2rem;
+    font-weight: 600;
+}
