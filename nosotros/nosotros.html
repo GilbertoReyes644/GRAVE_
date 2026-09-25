@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos | GRAVE</title>
+    
+    <meta name="description" content="Misión, visión y objetivos de GRAVE - Snacks de Alto Impacto.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lenis Smooth Scroll -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.css">
+    
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <svg class="star-preloader" viewBox="0 0 100 100">
+                <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" fill="#D32F2F"/>
+            </svg>
+            <span class="preloader-title">GRAVE</span>
+        </div>
+    </div>
+
+    <!-- Fondo Glow GPU -->
+    <div class="glow-bg"></div>
+
+    <!-- Header / Navbar -->
+    <header class="navbar" id="navbar">
+        <a href="../index.html" class="brand-logo-small">
+            <span>GRAVE</span>
+            <svg class="star-icon-sm" viewBox="0 0 100 100">
+                <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" fill="#D32F2F"/>
+            </svg>
+        </a>
+        <div class="nav-right">
+            <a href="../index.html" class="btn-nav">← INICIO</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Header de Sección -->
+        <section class="hero-section" id="hero" style="height: auto; padding-top: 8rem; padding-bottom: 2rem;">
+            <div class="hero-center-content">
+                <div class="section-badge">IDENTIDAD Y ADN</div>
+                <h1 class="pilars-heading" style="font-size: clamp(2.8rem, 7vw, 5rem);">QUIÉNES SOMOS</h1>
+                <p class="tagline-text" style="margin-top: 0.5rem; color: var(--accent-red);">CERO COMPROMISOS • PURO IMPACTO</p>
+            </div>
+        </section>
+
+        <!-- Manifiesto Principal -->
+        <section class="manifesto-section" style="padding-top: 1rem; padding-bottom: 3rem;">
+            <p class="manifesto-text">
+                En <strong>GRAVE</strong> no hacemos golosinas convencionales. Nacimos con la idea firme de reformular la experiencia del antojo en la universidad, combinando ingredientes de alta potencia, técnica artesanal de chamoy y una actitud urbana sin rodeos.
+            </p>
+        </section>
+
+        <!-- Misión, Visión y Objetivos -->
+        <section class="pilars-section" style="padding-top: 1rem;">
+            <div class="pilars-grid">
+                
+                <!-- MISIÓN -->
+                <div class="pilar-card">
+                    <span class="pilar-num">01</span>
+                    <h4 class="pilar-title">MISIÓN</h4>
+                    <p class="pilar-desc">
+                        Desarrollar y entregar snacks de alto impacto sensorial que rompan con lo aburrido de las marcas tradicionales, garantizando máxima frescura, contraste de sabor y el paro perfecto para el antojo diario.
+                    </p>
+                </div>
+
+                <!-- VISIÓN -->
+                <div class="pilar-card">
+                    <span class="pilar-num">02</span>
+                    <h4 class="pilar-title">VISIÓN</h4>
+                    <p class="pilar-desc">
+                        Consolidarnos como la marca independiente de snacks de mayor crecimiento y presencia en la comunidad universitaria, expandiendo nuestra red de distribución con identidad y calidad innegociable.
+                    </p>
+                </div>
+
+                <!-- OBJETIVO -->
+                <div class="pilar-card">
+                    <span class="pilar-num">03</span>
+                    <h4 class="pilar-title">OBJETIVO</h4>
+                    <p class="pilar-desc">
+                        Mantener el equilibrio exacto en nuestra receta secreta, escalar nuestro volumen de producción sin perder el toque artesanal y llevar una bolsa de GRAVE a cada rincón de la universidad.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="buy-section" style="padding-top: 2rem;">
+            <div class="buy-card">
+                <span class="buy-badge">¿YA PROBASTE LA RECETA?</span>
+                <h3 class="buy-title">PRUÉBALAS EN LA UNIVERSIDAD</h3>
+                <p class="buy-desc">Pide tus bolsas de 90g por WhatsApp y te las llevamos directo a tu edificio o área.</p>
+                
+                <a href="https://wa.me/525547285702?text=Qué%20onda,%20estaba%20leyendo%20su%20página%20de%20Quiénes%20Somos%20y%20quiero%20unas%20GRAVE!" target="_blank" class="btn-buy-now">
+                    PEDIR POR WHATSAPP ➔
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="../index.html" class="footer-brand">GRAVE</a>
+                <p class="footer-sub">Snacks de Alto Impacto</p>
+            </div>
+            <div class="footer-meta">
+                <p>&copy; <span id="year"></span> GRAVE SNACKS.</p>
+                <p class="made-mx">HECHO CON ACTITUD EN MÉXICO 🇲🇽</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
