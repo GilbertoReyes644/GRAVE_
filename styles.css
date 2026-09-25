@@ -19,6 +19,12 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 html, body {
     background-color: var(--bg-black);
     color: var(--text-white);
@@ -27,7 +33,58 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Background Glow */
+/* --- LOGO IMAGES --- */
+.nav-logo-img {
+    height: 30px;
+    width: auto;
+}
+
+.footer-logo-img {
+    height: 40px;
+    width: auto;
+    margin-bottom: 0.5rem;
+}
+
+/* --- PRELOADER --- */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-black);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.star-preloader {
+    width: 50px;
+    height: 50px;
+    animation: pulseStar 1.2s infinite ease-in-out;
+}
+
+@keyframes pulseStar {
+    0%, 100% { transform: scale(0.9); opacity: 0.6; filter: drop-shadow(0 0 5px rgba(211,47,47,0.5)); }
+    50% { transform: scale(1.2); opacity: 1; filter: drop-shadow(0 0 20px rgba(211,47,47,1)); }
+}
+
+.preloader-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: var(--text-white);
+}
+
+/* Background Glow GPU */
 .glow-bg {
     position: fixed;
     top: 50%;
@@ -260,8 +317,21 @@ html, body {
     line-height: 1.4;
 }
 
+.manifesto-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.manifesto-text {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    color: #cccccc;
+}
+
 /* =========================================
-   BUY SECTION (CTA Directo)
+   BUY SECTION & LIVE STATUS
 ========================================= */
 .buy-section {
     padding: 4rem 1.5rem 2rem;
@@ -315,6 +385,42 @@ html, body {
     background: #b71c1c;
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(211, 47, 47, 0.6);
+}
+
+/* STATUS BAR EN TIEMPO REAL */
+.live-status-container {
+    margin-top: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-gray);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.active {
+    background-color: #4CAF50;
+    box-shadow: 0 0 10px #4CAF50;
+}
+
+.status-dot.inactive {
+    background-color: #FFC107;
+    box-shadow: 0 0 10px #FFC107;
+}
+
+.status-text {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-gray);
 }
 
 /* WHOLESALE SUBTLE */
