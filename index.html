@@ -15,9 +15,19 @@
     <!-- Lenis Smooth Scroll -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.css">
     
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+    <!-- Preloader Tipográfico -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <svg class="star-preloader" viewBox="0 0 100 100">
+                <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" fill="#D32F2F"/>
+            </svg>
+            <span class="preloader-title">GRAVE</span>
+        </div>
+    </div>
 
     <!-- Fondo Glow GPU -->
     <div class="glow-bg"></div>
@@ -30,7 +40,8 @@
                 <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" fill="#D32F2F"/>
             </svg>
         </a>
-        <div class="nav-right">
+        <div class="nav-right" style="display: flex; gap: 1rem; align-items: center;">
+            <a href="nosotros/nosotros.html" class="link-wholesale" style="font-size: 0.8rem; text-decoration: none; padding: 0.5rem;">QUIÉNES SOMOS</a>
             <a href="#comprar" class="btn-nav">PEDIR AHORA</a>
         </div>
     </header>
@@ -58,6 +69,13 @@
                     <span class="shield-badge">RECETA SECRETA</span>
                     <h2 class="shield-heading">CERO COMPROMISOS. PURO IMPACTO.</h2>
                     <p class="shield-sub">Mezcla exacta de gomita frutal de alta intensidad con nuestra infusión secreta de chamoy. Sin rodeos.</p>
+                    
+                    <div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                        <a href="productos/bolsa-originals.html" class="link-wholesale" style="font-size: 0.9rem;">
+                            Ver especificaciones de la Bolsa Pouch 90g ➔
+                        </a>
+                    </div>
+
                     <div class="shield-star-center">
                         <svg class="star-shield-svg" viewBox="0 0 100 100">
                             <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" fill="#D32F2F"/>
@@ -67,11 +85,11 @@
             </div>
         </section>
 
-        <!-- Sección: Pilares / Copy Refinado -->
+        <!-- Sección: Pilares -->
         <section class="pilars-section" id="pilars">
             <div class="section-header-center">
                 <div class="section-badge">GOMITAS ORIGINALS 90G</div>
-                <h3 class="pilars-heading">LA EXPERIENCIA GREAT</h3>
+                <h3 class="pilars-heading">LA EXPERIENCIA GRAVE</h3>
             </div>
 
             <div class="pilars-grid">
@@ -100,10 +118,14 @@
                 <h3 class="buy-title">PÍDELAS EN LA UNIVERSIDAD</h3>
                 <p class="buy-desc">Manda mensaje por WhatsApp, dinos en qué edificio o área estás y te caemos con tus bolsas de 90g.</p>
                 
-                <!-- Link directo a tu WhatsApp con tu número -->
                 <a href="https://wa.me/525547285702?text=Qué%20onda,%20quiero%20unas%20GRAVE%20aquí%20en%20la%20universidad!" target="_blank" class="btn-buy-now">
                     PEDIR POR WHATSAPP ➔
                 </a>
+
+                <div class="live-status-container">
+                    <span class="status-dot" id="status-dot"></span>
+                    <span class="status-text" id="status-text">Cargando disponibilidad...</span>
+                </div>
             </div>
         </section>
 
@@ -122,6 +144,9 @@
             <div class="footer-left">
                 <a href="#hero" class="footer-brand">GRAVE</a>
                 <p class="footer-sub">Snacks de Alto Impacto</p>
+                <div style="margin-top: 0.8rem;">
+                    <a href="nosotros/nosotros.html" class="link-wholesale" style="font-size: 0.8rem;">Conoce quiénes somos ➔</a>
+                </div>
             </div>
             <div class="footer-meta">
                 <p>&copy; <span id="year"></span> GRAVE SNACKS.</p>
@@ -135,6 +160,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
