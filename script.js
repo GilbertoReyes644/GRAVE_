@@ -1,6 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Lenis Smooth Scroll
+    // 1. Preloader Animación de salida con GSAP
+    window.addEventListener("load", () => {
+        gsap.to("#preloader", {
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            onComplete: () => {
+                document.getElementById("preloader").style.display = "none";
+                initHeroAnimation();
+            }
+        });
+    });
+
+    // 2. Lenis Smooth Scroll
     const lenis = new Lenis({
         duration: 0.8,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -20,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     gsap.ticker.lagSmoothing(0);
 
-    // 2. Navegación fluida por anclas (#hero, #comprar)
+    // 3. Navegación Suave por Anclas
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -33,23 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 3. Animación de entrada
-    const heroTl = gsap.timeline();
+    // 4. Animación Inicial Hero Tipográfico
+    function initHeroAnimation() {
+        const heroTl = gsap.timeline();
 
-    heroTl.from(".star-svg", {
-        scale: 0,
-        rotate: -180,
-        duration: 0.9,
-        ease: "back.out(1.7)"
-    })
-    .from("#hero-tagline", {
-        y: 15,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out"
-    }, "-=0.3");
+        heroTl.from(".star-svg", {
+            scale: 0,
+            rotate: -180,
+            duration: 0.9,
+            ease: "back.out(1.7)"
+        })
+        .from("#hero-tagline", {
+            y: 15,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.out"
+        }, "-=0.3");
+    }
 
-    // ScrollTrigger para el título
+    // ScrollTriggers
     gsap.to("#main-title", {
         scrollTrigger: {
             trigger: "#hero",
@@ -62,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
         y: -25
     });
 
-    // Escudo Geométrico
     gsap.from("#shield-box", {
         scrollTrigger: {
             trigger: "#shield-sec",
@@ -74,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.out"
     });
 
-    // Pilares
     gsap.from(".pilar-card", {
         scrollTrigger: {
             trigger: "#pilars",
@@ -87,7 +100,25 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.out"
     });
 
-    // Footer Year
+    // 5. Indicador de Horario/Disponibilidad en Tiempo Real en UPMH
+    const updateLiveStatus = () => {
+        const dot = document.getElementById("status-dot");
+        const text = document.getElementById("status-text");
+        const currentHour = new Date().getHours();
+
+        if (currentHour >= 8 && currentHour < 18) {
+            dot.className = "status-dot active";
+            text.textContent = "DISPONIBLE HOY EN UPMH";
+            text.style.color = "#4CAF50";
+        } else {
+            dot.className = "status-dot inactive";
+            text.textContent = "ENTREGAS PROGRAMADAS PARA MAÑANA";
+            text.style.color = "#FFC107";
+        }
+    };
+    updateLiveStatus();
+
+    // Año Footer
     const yearEl = document.getElementById("year");
     if(yearEl) yearEl.textContent = new Date().getFullYear();
 });
